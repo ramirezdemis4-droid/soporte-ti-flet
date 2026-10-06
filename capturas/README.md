@@ -1,0 +1,1 @@
+Guarda aquí una captura REAL de la aplicación Flet conectada a tu MySQL con tickets visibles, con el nombre `aplicacion.png`. Después insértala en el README principal y súbela a GitHub con otro commit.
