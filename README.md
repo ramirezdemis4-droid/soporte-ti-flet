@@ -41,9 +41,9 @@ erDiagram
 
 ## Instalación paso a paso (Windows)
 
-1. Instala y enciende MySQL. Conéctate a él desde DBeaver.
-2. Abre `sql/01_tablas.sql` en el editor SQL de DBeaver y ejecuta el **script completo** (Alt+X). Luego, en este orden, ejecuta `sql/02_trigger.sql`, `sql/03_procedimiento.sql` y `sql/04_datos_ejemplo.sql`. Usa la ejecución de script porque los archivos de rutina contienen `DELIMITER`.
-3. Comprueba en DBeaver que apareció la base `soporte_ti` con sus siete tablas. Puedes ejecutar `sql/05_consultas.sql` para ver el JOIN y el resumen.
+1. Conéctate al servidor MySQL desde DBeaver y selecciona la base que ya tienes asignada. En `.env`, `DB_NAME` debe ser **exactamente ese nombre**. Si todavía no tienes una base, créala primero desde DBeaver con un usuario que tenga permiso para hacerlo.
+2. Abre `sql/01_tablas.sql` en el editor SQL de DBeaver **sobre esa base seleccionada** y ejecuta el script completo (Alt+X). Luego ejecuta, en este orden y en la misma base, `sql/02_trigger.sql`, `sql/03_procedimiento.sql` y `sql/04_datos_ejemplo.sql`. Usa la ejecución de script porque los archivos de rutina contienen `DELIMITER`. Tu usuario debe tener permisos para crear tablas, triggers y procedimientos.
+3. Comprueba en DBeaver que tu base tiene las siete tablas. Puedes ejecutar `sql/05_consultas.sql` para ver el JOIN y el resumen.
 4. Abre PowerShell en la carpeta de este proyecto y ejecuta:
 
    ```powershell
@@ -54,7 +54,7 @@ erDiagram
    ```
 
    Si tienes Python 3.11 en vez de 3.12, cambia `py -3.12` por `py -3.11`. Si PowerShell bloquea la activación, utiliza `cmd` con `.venv\Scripts\activate.bat`, o ejecuta directamente `.venv\Scripts\python.exe` en los comandos siguientes.
-5. Abre `.env` y coloca el usuario y contraseña de **tu MySQL local**. DBeaver es solo el cliente: usa los datos del servidor al que te conectas. El archivo `.env` no se sube a GitHub.
+5. Abre `.env` y coloca el host, puerto, usuario, contraseña y nombre de la base del **mismo servidor MySQL que usas en DBeaver**. El archivo `.env` no se sube a GitHub. No compartas capturas que muestren la contraseña.
 6. Inicia la aplicación:
 
    ```powershell
@@ -106,4 +106,3 @@ git push -u origin main
 ```
 
 El proyecto ya incluye commits separados para la base de datos, las consultas, la interfaz y la documentación. La captura real y el enlace dependen de ejecutarlo en tu equipo y tu cuenta de GitHub.
-

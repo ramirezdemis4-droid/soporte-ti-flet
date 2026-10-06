@@ -1,4 +1,4 @@
-USE soporte_ti;
+-- Ejecuta este script conectado a la base indicada en DB_NAME de .env.
 DROP TRIGGER IF EXISTS tr_historial_estado;
 DELIMITER $$
 CREATE TRIGGER tr_historial_estado
@@ -11,4 +11,3 @@ BEGIN
   END IF;
 END$$
 DELIMITER ;
-

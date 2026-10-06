@@ -1,4 +1,4 @@
-USE soporte_ti;
+-- Ejecuta este script conectado a la base indicada en DB_NAME de .env.
 INSERT IGNORE INTO especialidades (nombre) VALUES ('Hardware'), ('Software'), ('Redes');
 
 INSERT IGNORE INTO usuarios (nombre, correo) VALUES
@@ -21,4 +21,3 @@ SELECT 'Impresora sin conexión', 'La impresora de la oficina no responde.', u.i
 FROM usuarios u CROSS JOIN especialidades e
 WHERE u.correo = 'ana@example.com' AND e.nombre = 'Hardware'
   AND NOT EXISTS (SELECT 1 FROM tickets WHERE titulo = 'Impresora sin conexión');
-

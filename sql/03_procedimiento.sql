@@ -1,4 +1,4 @@
-USE soporte_ti;
+-- Ejecuta este script conectado a la base indicada en DB_NAME de .env.
 DROP PROCEDURE IF EXISTS asignar_tecnico;
 DELIMITER $$
 CREATE PROCEDURE asignar_tecnico(IN p_ticket_id INT, IN p_tecnico_id INT)
@@ -36,4 +36,3 @@ BEGIN
   END IF;
 END$$
 DELIMITER ;
-

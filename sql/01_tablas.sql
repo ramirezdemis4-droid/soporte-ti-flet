@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS soporte_ti CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE soporte_ti;
+-- Selecciona en DBeaver la misma base indicada en DB_NAME de .env.
+-- No crea ni cambia de base; sirve también para servidores donde la base ya existe.
 
 CREATE TABLE IF NOT EXISTS usuarios (
   id INT AUTO_INCREMENT PRIMARY KEY,
